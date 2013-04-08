@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install SYSTEM "http://dev.joomla.org/xml/1.5/component-install.dtd">
+<install type="jfusion" version="1.6.0">
+	<name>xenforo</name>
+	<author>Martin Cooper</author>
+	<creationDate>February 2011</creationDate>
+	<copyright>Copyright (C) 2011 Martin Cooper. All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>mac@martinc.me.uk</authorEmail>
+	<authorUrl>www.martinc.me.uk</authorUrl>
+	<version>1.6.0-006</version>
+	<description>xenForo 1.0.6</description>
+	<slave>3</slave>
+	<dual_login>3</dual_login>
+
+	<files>
+		<filename>admin.php</filename>
+		<filename>auth.php</filename>
+		<filename>index.html</filename>
+		<filename>jfusion.xml</filename>
+		<filename>public.php</filename>
+		<filename>user.php</filename>
+		<filename>helper.php</filename>
+	</files>
+  	<params addpath="/administrator/components/com_jfusion/elements">
+		<param name="jfusionbox" type="text" default="" label="PLUGIN_GENERAL_DETAILS" description="" />
+		<param name="description" type="text" size="60" default="xenForo" description="DESCRIPTION"/>
+		<param name="source_url" type="text" size="60" default="http://www.yourdomain.com/xenforo/" description="SOURCE_URL" />
+		<param name="source_path" type="text" size="60" default="" description="SOURCE_PATH" />
+		<param name="cookie_domain" type="text" size="60" default="" description="COOKIE_DOMAIN" />
+		<param name="cookie_path" type="text" size="20" default="/" description="COOKIE_PATH" />
+		<param name="cookie_prefix" type="text" size="20" default="xf_" description="COOKIE_PREFIX" />
+
+		<param name="jfusionbox" type="text" default="" label="DATABASE_OPTIONS" description="" />
+		<param name="database_type" type="text" size="20" default="mysql" description="DATABASE_TYPE"/>
+		<param name="database_host" type="text" size="20" default="localhost" description="DATABASE_HOST"/>
+		<param name="database_name" type="text" size="20" default="" description="DATABASE_NAME"/>
+		<param name="database_user" type="text" size="20" default="" description="DATABASE_USER"/>
+		<param name="database_password" type="password" size="20" default="" description="DATABASE_PASSWORD"/>
+		<param name="database_prefix" type="text" size="20" default="" description="DATABASE_PREFIX"/>
+		<param name="database_charset" type="text" size="20" default="utf8" description="DATABASE_CHARSET"/>
+		
+		<param name="jfusionbox" type="text" default="" label="LOGIN_OPTIONS" description="" />
+		<param name=" " type="helptext" default="LOGIN_IDENTIFIER_DESCR"/>
+		<param name="login_identifier" type="list" default="1" description="LOGIN_IDENTIFIER">
+			<option value="1">USERNAME</option>
+			<option value="2">EMAIL</option>
+			<option value="3">USERNAME_OR_EMAIL</option>
+		</param>
+
+        <param name="global_salt" type="text" size="80" label="Xenforo Global Salt" default="" />
+        
+		<param name="jfusionbox" type="text" default="" label="USER_OPTIONS" description="" />
+		<param name=" " type="helptext" default="DEFAULT_USERGROUP_DESCR"/>
+        <param name="multiusergroup" default="" type="JFusionCustomParam"
+            label="USERGROUP_MANAGEMENT" description="ADVANCED_USERGROUP" />
+		<param name="usergroup" type="JFusionUsergroups" description="DEFAULT_USERGROUP" label="DEFAULT_USERGROUP" />
+		<param name="activationgroup" type="JFusionUsergroups" description="DEFAULT_ACTIVATIONGROUP" label="DEFAULT_ACTIVATIONGROUP" />
+		<param name="@spacer" type="spacer" default="" label=""	description="" />
+		<param name=" " type="helptext" default="AUTO_UPDATE_DESCR"/>
+        
+        <param name="syncsessions" type="list" default="1" label="" description="Sync Sessions">
+            <option value="1">YES</option>
+            <option value="0">NO</option>
+        </param>
+        
+        <param name="keepalive" type="list" default="1" label="" description="Keep Alive">
+            <option value="1">YES</option>
+            <option value="0">NO</option>
+        </param>
+        
+		<param name="update_activation" type="list" default="1" label="" description="UPDATE_ACTIVATION">
+			<option value="1">YES</option>
+			<option value="0">NO</option>
+		</param>
+		<param name="update_block" type="list" default="1" label="" description="UPDATE_BLOCK">
+			<option value="1">YES</option>
+			<option value="0">NO</option>
+		</param>
+		<param name="update_email" type="list" default="1" label="" description="UPDATE_EMAIL">
+			<option value="1">YES</option>
+			<option value="0">NO</option>
+		</param>
+		<param name="create_inactive" type="list" default="1" label="" description="CREATE_INACTIVE">
+			<option value="1">YES</option>
+			<option value="0">NO</option>
+		</param>
+		<param name="create_blocked" type="list" default="1" label="" description="CREATE_BLOCKED">
+			<option value="1">YES</option>
+			<option value="0">NO</option>
+		</param>			
+	</params>
+
+</install>
