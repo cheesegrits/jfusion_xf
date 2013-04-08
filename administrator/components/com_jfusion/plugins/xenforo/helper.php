@@ -360,6 +360,9 @@ class JFusionHelper_xenforo
 	 */
 	public function changeUserGroup($userid, $usergroup, $error, &$status, $activate, $primary = 1)
 	{
+
+		$params = JFusionFactory::getParams($this->getJname());
+
 		$primary = (int) $primary;
 
 		/**
@@ -368,6 +371,9 @@ class JFusionHelper_xenforo
 
 		// Key J User group => value Xen user group
 		$map = array();
+
+		// Registered
+		$map[2] = 2;
 
 		// Supporter
 		$map[9] = 46;
@@ -378,14 +384,8 @@ class JFusionHelper_xenforo
 		// Pro
 		$map[11] = 44;
 
-		// If we don't have the $usergroup mapped, bail out now
-		if (!in_array($usergroup, $map))
-		{
-			return;
-		}
-
-		// Set the user group from the J user group to the xen user group
-		$usergroup = $map[$usergroup];
+		// Map to XF group id, using default from plugin settings (which is already an XF id)
+		$usergroup = JArrayHelper::getValue($map, $usergroup, (int) $params->get('usergroup', 2));
 
 		$query = "UPDATE xf_user
 		SET user_group_id = {$usergroup},
