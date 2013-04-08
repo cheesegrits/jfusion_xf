@@ -378,6 +378,12 @@ class JFusionHelper_xenforo
 		// Pro
 		$map[11] = 44;
 
+		// If we don't have the $usergroup mapped, bail out now
+		if (!in_array($usergroup, $map))
+		{
+			return;
+		}
+
 		// Set the user group from the J user group to the xen user group
 		$usergroup = $map[$usergroup];
 
